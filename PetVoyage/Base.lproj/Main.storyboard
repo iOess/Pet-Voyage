@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PetVoyage" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paris" translatesAutoresizingMaskIntoConstraints="NO" id="Ufo-ck-AsL">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="PWh-Gz-LbX" appends="YES" id="fuG-Xr-m9m"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="cat" translatesAutoresizingMaskIntoConstraints="NO" id="9Kn-iJ-p9D">
+                                <rect key="frame" x="68" y="73" width="150" height="150"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="IxO-QG-R24"/>
+                                    <constraint firstAttribute="width" constant="150" id="LAv-u4-X3F"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Ijz-kN-Qbl" appends="YES" id="iae-AX-hBu"/>
+                                    <outletCollection property="gestureRecognizers" destination="Zyu-wJ-IEN" appends="YES" id="6tg-tg-x2g"/>
+                                    <outletCollection property="gestureRecognizers" destination="HXf-Jr-ZMf" appends="YES" id="JLJ-CX-ohO"/>
+                                    <outletCollection property="gestureRecognizers" destination="E9w-JX-YP4" appends="YES" id="pY3-75-F4R"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ufo-ck-AsL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="FW7-4t-81c"/>
+                            <constraint firstItem="Ufo-ck-AsL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Huu-Lh-Uac"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ufo-ck-AsL" secondAttribute="trailing" constant="-20" id="Sg3-FO-ynt"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ufo-ck-AsL" secondAttribute="bottom" id="dbx-QE-9kr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="animal" destination="9Kn-iJ-p9D" id="wfo-v3-aUn"/>
+                        <outlet property="background" destination="Ufo-ck-AsL" id="FyH-h1-sLw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Ijz-kN-Qbl">
+                    <connections>
+                        <action selector="tapAnimal:" destination="BYZ-38-t0r" id="j79-M4-iL5"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="FPi-LY-waH"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Zyu-wJ-IEN">
+                    <connections>
+                        <action selector="panAnimal:" destination="BYZ-38-t0r" id="1X1-mX-726"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="Aby-d6-R2B"/>
+                    </connections>
+                </panGestureRecognizer>
+                <pinchGestureRecognizer id="HXf-Jr-ZMf">
+                    <connections>
+                        <action selector="pinchAnimal:" destination="BYZ-38-t0r" id="hrP-Ly-tsv"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="bz6-ZP-EKw"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <rotationGestureRecognizer id="E9w-JX-YP4">
+                    <connections>
+                        <action selector="rotateAnimal:" destination="BYZ-38-t0r" id="n7V-a9-4ly"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="0rV-eh-RBc"/>
+                    </connections>
+                </rotationGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="PWh-Gz-LbX">
+                    <connections>
+                        <action selector="swipeBackground:" destination="BYZ-38-t0r" id="mXq-vc-Nbz"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cat" width="500" height="337"/>
+        <image name="paris" width="1146" height="1527"/>
+    </resources>
+</document>
