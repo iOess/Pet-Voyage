@@ -11,9 +11,6 @@ Create funny pictures by placing animals in different parts of the world! You ca
 - Change animals by tapping on them
 - Move, resize, and rotate your animal via pan, pinch and rotate gestures
 
-
-
-
 ## Requirements
 
 - iOS 8.0+ / Mac OS X 10.9+
